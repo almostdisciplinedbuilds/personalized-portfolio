@@ -1,0 +1,72 @@
+{
+  "sourceUrl": "https://devpost.com/swathikanthetiwork/challenges",
+  "syncedAt": "2026-05-03T14:03:25.342Z",
+  "count": 5,
+  "hackathons": [
+    {
+      "id": "29204",
+      "title": "Splunk Agentic Ops Hackathon",
+      "location": "Online",
+      "summary": "Reimagine the future of agentic operations using Splunk AI",
+      "prize": "$20,000",
+      "status": "Submissions open soon",
+      "participants": "846",
+      "href": "https://splunk.devpost.com/?ref_content=featured&ref_feature=challenge&ref_medium=portfolio",
+      "image": "https://d112y698adiu2z.cloudfront.net/photos/production/challenge_thumbnails/004/522/819/datas/large.png",
+      "featured": true,
+      "source": "Devpost"
+    },
+    {
+      "id": "29377",
+      "title": "Build with MeDo Hackathon",
+      "location": "Online",
+      "summary": "Build creative applications with MeDo, no coding required. Push the boundaries of what you can create.",
+      "prize": "$50,000",
+      "status": "May 20, 2026 09:00 AM EDT to submit",
+      "participants": "5478",
+      "href": "https://medo.devpost.com/?ref_content=default&ref_feature=challenge&ref_medium=portfolio",
+      "image": "https://d112y698adiu2z.cloudfront.net/photos/production/challenge_thumbnails/004/516/528/datas/large.png",
+      "featured": false,
+      "source": "Devpost"
+    },
+    {
+      "id": "29391",
+      "title": "The Future Innovators Hackathon: A Road to START Hack",
+      "location": "Lisboa, Portugal",
+      "summary": "Build bold MVPs in 24 hours on April 24–25, in person with mentors and entrepreneurs from the Unicorn Factory ecosystem.",
+      "prize": "€2,000",
+      "status": "Mar 31 – Apr 25, 2026",
+      "participants": "188",
+      "href": "https://future-innovators-hackathon.devpost.com/?ref_content=default&ref_feature=challenge&ref_medium=portfolio",
+      "image": "https://d112y698adiu2z.cloudfront.net/photos/production/challenge_thumbnails/004/517/208/datas/large.png",
+      "featured": false,
+      "source": "Devpost"
+    },
+    {
+      "id": "25719",
+      "title": "Amazon Nova AI Hackathon",
+      "location": "Online",
+      "summary": "Build your way with Amazon Nova",
+      "prize": "$40,000",
+      "status": "Winners announced",
+      "participants": "13447",
+      "href": "https://amazon-nova.devpost.com/?ref_content=default&ref_feature=challenge&ref_medium=portfolio",
+      "image": "https://d112y698adiu2z.cloudfront.net/photos/production/challenge_thumbnails/004/222/586/datas/large.png",
+      "featured": false,
+      "source": "Devpost"
+    },
+    {
+      "id": "28633",
+      "title": "Gemini Live Agent Challenge",
+      "location": "Online",
+      "summary": "Redefining Interaction: From Static Chatbots to Immersive Experiences",
+      "prize": "$80,000",
+      "status": "Winners announced",
+      "participants": "11880",
+      "href": "https://geminiliveagentchallenge.devpost.com/?ref_content=default&ref_feature=challenge&ref_medium=portfolio",
+      "image": "https://d112y698adiu2z.cloudfront.net/photos/production/challenge_thumbnails/004/338/662/datas/large.png",
+      "featured": false,
+      "source": "Devpost"
+    }
+  ]
+}
