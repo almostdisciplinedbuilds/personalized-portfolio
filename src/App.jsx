@@ -123,7 +123,7 @@ const journeyItems = [
     period: '2019 - 2021',
     title: 'Systems Engineer',
     place: 'Infosys',
-    skills: ['Java SE8', 'Spring Boot', 'MongoDB', 'Kafka', 'RabbitMQ'],
+    skills: ['Java SE8', 'Spring Boot', 'Microservices', 'MongoDB', 'Kafka', 'RabbitMQ'],
     summary: 'Built ecommerce features, support flows, and client-facing delivery muscles.',
     signal: 'Execution under pressure',
   },
@@ -322,6 +322,13 @@ const sectionCards = [
 
 const topPickIds = ['journey', 'skills', 'ai', 'projects']
 const continueIds = ['certifications', 'awards', 'hackathons', 'personal', 'music']
+
+const roleSectionVisibility = {
+  bigGuy: [...topPickIds, ...continueIds],
+  codeBlooded: ['projects', 'skills', 'ai', 'journey', 'certifications', 'hackathons'],
+  stalkerPro: ['journey', 'projects', 'certifications', 'awards', 'hackathons'],
+  vibeCommittee: ['personal', 'music', 'journey', 'hackathons', 'projects'],
+}
 
 function playAudio(src, muted) {
   if (muted) return
@@ -568,21 +575,35 @@ function SectionRow({ title, subtitle, cards, onOpen }) {
   )
 }
 
-function ProfileHome({ onOpenSection }) {
+function ProfileHome({ roleKey, onOpenSection }) {
+  const visibleSections = roleSectionVisibility[roleKey] || roleSectionVisibility.bigGuy
+  const getVisibleCards = (ids) =>
+    ids
+      .filter((id) => visibleSections.includes(id))
+      .map((id) => sectionCards.find((card) => card.id === id))
+      .filter(Boolean)
+
+  const topCards = getVisibleCards(topPickIds)
+  const continueCards = getVisibleCards(continueIds)
+
   return (
     <main className="profile-content">
-      <SectionRow
-        title="Recruiter Signal Desk"
-        subtitle="The fastest path to fit, proof, and current momentum."
-        cards={sectionCards.filter((card) => topPickIds.includes(card.id))}
-        onOpen={onOpenSection}
-      />
-      <SectionRow
-        title="Proof Library"
-        subtitle="Credentials, recognition, challenge work, and the personal signals behind the work."
-        cards={sectionCards.filter((card) => continueIds.includes(card.id))}
-        onOpen={onOpenSection}
-      />
+      {topCards.length > 0 && (
+        <SectionRow
+          title="Recruiter Signal Desk"
+          subtitle="The fastest path to fit, proof, and current momentum."
+          cards={topCards}
+          onOpen={onOpenSection}
+        />
+      )}
+      {continueCards.length > 0 && (
+        <SectionRow
+          title="Proof Library"
+          subtitle="Credentials, recognition, challenge work, and the personal signals behind the work."
+          cards={continueCards}
+          onOpen={onOpenSection}
+        />
+      )}
     </main>
   )
 }
@@ -625,7 +646,7 @@ function JourneyView() {
           style={{ '--step-index': index }}
         >
           <div className="road-marker">
-            <span>{String(index + 1).padStart(2, '0')}</span>
+            <span>{String(journeyItems.length - index).padStart(2, '0')}</span>
           </div>
           <div className="roadmap-card">
             <span>{item.period}</span>
@@ -893,7 +914,7 @@ function App() {
               onBack={() => setActiveSection('')}
             />
           ) : (
-            <ProfileHome onOpenSection={setActiveSection} />
+            <ProfileHome roleKey={role} onOpenSection={setActiveSection} />
           )}
         </>
       )}

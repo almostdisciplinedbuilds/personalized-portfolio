@@ -688,8 +688,8 @@
   .skills-board,
   .journey-roadmap,
   .project-groups {
-    padding-left: 1rem;
-    padding-right: 1rem;
+    padding-left: 0.85rem;
+    padding-right: 0.85rem;
   }
 
   .row-scroll {
@@ -697,35 +697,60 @@
   }
 
   .journey-roadmap::before {
-    left: 2.35rem;
+    left: calc(0.85rem + 24px);
   }
 
   .roadmap-stop {
-    grid-template-columns: 54px minmax(0, 1fr);
-    gap: 0.85rem;
+    grid-template-columns: 48px minmax(0, 1fr);
+    align-items: start;
+    gap: 0.7rem;
     min-height: auto;
   }
 
   .road-marker {
     grid-column: 1;
-    width: 54px;
-    height: 54px;
+    width: 48px;
+    height: 48px;
+    margin-top: 0.25rem;
   }
 
   .road-marker span {
-    width: 36px;
-    height: 36px;
+    width: 34px;
+    height: 34px;
     font-size: 0.68rem;
   }
 
   .roadmap-stop.left .roadmap-card,
   .roadmap-stop.right .roadmap-card {
     grid-column: 2;
+    min-width: 0;
+    padding: 0.85rem;
+    overflow-wrap: anywhere;
   }
 
   .roadmap-stop.left .roadmap-card::after,
   .roadmap-stop.right .roadmap-card::after {
     display: none;
+  }
+
+  .roadmap-card h3 {
+    font-size: 1rem;
+    line-height: 1.18;
+  }
+
+  .roadmap-card h4,
+  .roadmap-card p:not(.card-eyebrow) {
+    line-height: 1.42;
+  }
+
+  .roadmap-card .tag-cloud {
+    gap: 0.34rem;
+  }
+
+  .roadmap-card .tag-cloud em {
+    max-width: 100%;
+    font-size: 0.7rem;
+    overflow-wrap: anywhere;
   }
 
   .back-button {
