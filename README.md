@@ -1,84 +1,122 @@
 # Lakshmi Swathi Kantheti Portfolio
 
-A personalized cinematic portfolio with TradingView-style energy underneath. The first phase focuses on recruiter storytelling, live project holdings, AI/security work, hackathons, music identity, and a roadmap-style career journey.
+A cinematic React portfolio for Lakshmi Swathi Kantheti, built with Vite, React, Three.js, and a dark market-terminal visual style. The site presents career experience, technical skills, AI/security work, projects, awards, certifications, hackathons, and personal creative signals in an interactive profile-based experience.
 
-## Core Idea
+## Overview
 
-This portfolio has two main experience pillars:
+The portfolio opens with a name-first entry screen, then lets visitors choose a viewing profile. Each profile keeps the same visual identity while showing a curated set of modules for that audience.
 
-- **Cinematic profile flow**: name-first entry, profile selection, hero view, and curated content rails.
-- **TradingView energy**: dark market-terminal visual language, ticker strips, signal labels, holdings, momentum, and roadmap-style career movement.
+- **The Big Guy**: full portfolio view.
+- **Code Blooded**: projects, skills, AI work, journey, certifications, and hackathons.
+- **Professional Stalker**: journey, projects, certifications, awards, and hackathons.
+- **Vibe Check Committee**: personal signal, music, journey, hackathons, and projects.
 
-## Current Experience
+## Features
 
-- Name-first cinematic launch screen with a user-triggered 12-second audio intro.
-- Role picker with profiles for recruiters, developers, public-audit viewers, and vibe/personality viewers.
-- Recruiter-focused profile hero with resume and LinkedIn actions.
-- 3D market hero built with Three.js and React Three Fiber.
-- Dedicated sections for Journey, Skills, AI Studio, Projects, Certifications, Awards, Hackathons, Personal Signal, and Music Lab.
-- Recent-first career roadmap from current AI/security work back through Oracle, IBM, Infosys, and college.
-- GitHub projects fetched live from `almostdisciplinedbuilds`, grouped by repo topics when available.
-- Devpost hackathons synced from `https://devpost.com/swathikanthetiwork/challenges` with cached fallback data.
-- Static fallback cards when GitHub or Devpost live data is unavailable.
+- Cinematic launch screen with optional audio.
+- Profile picker with role-based module visibility.
+- Three.js hero scene using React Three Fiber.
+- Career journey roadmap covering education, Infosys, IBM, Oracle, and current AI/security work.
+- Skills grouped by engineering, AI/automation, frontend, data/cloud, and delivery signals.
+- GitHub project feed grouped by normalized repository topics.
+- Devpost hackathon data with cached fallback support.
+- Certifications, awards, personal signal, and music lab sections.
+- Responsive layout with mobile-specific roadmap adjustments.
+
+## Tech Stack
+
+- React 18
+- Vite
+- Three.js
+- React Three Fiber
+- React Three Drei
+- ESLint
+- Vercel-compatible serverless API route
+
+## Project Structure
+
+```txt
+api/
+  devpost-hackathons.js
+public/
+  resume/
+src/
+  assets/
+  data/
+  lib/
+  App.jsx
+  App.css
+  main.jsx
+scripts/
+  sync-devpost-hackathons.mjs
+```
 
 ## Live Data
 
 ### GitHub Projects
 
-The app fetches public repositories from:
+The app fetches public repositories from the GitHub user:
 
 ```txt
 almostdisciplinedbuilds
 ```
 
-Repo topics are normalized into portfolio categories:
-
-- `ai-agent` -> AI Agents
-- `ai-governance` -> AI Governance
-- `ai-automation` -> AI Automations
-- `ai-enrichment` -> AI Enrichments
-- `security` -> Security Engineering
-- `legal-tech` -> Lawyers / Legal Use Cases
-- `trading` -> Trading / Market Tools
-- `portfolio` -> Portfolio Systems
+Repository topics are normalized into portfolio categories such as AI agents, AI governance, automation, security engineering, legal-tech, trading tools, and portfolio systems.
 
 ### Devpost Hackathons
 
-Hackathons are cached in:
+Hackathon data is cached in:
 
 ```txt
 src/data/devpostHackathons.json
 ```
 
-Refresh the cache with:
+Refresh the local cache with:
 
 ```bash
 npm run sync:hackathons
 ```
 
-The app also includes `/api/devpost-hackathons` for serverless-capable hosts. When the Hackathons section opens, the portfolio tries to refresh live Devpost data and falls back to the cached JSON if the live check is unavailable.
+The `api/devpost-hackathons.js` route supports live refreshes on serverless hosts such as Vercel. If live refresh is unavailable, the app uses the cached JSON data.
 
-## Scripts
+## Getting Started
+
+Install dependencies:
 
 ```bash
 npm install
-npm run dev
-npm run lint
-npm run build
-npm run sync:hackathons
 ```
 
-## Deployment Notes
+Run locally:
 
-This is a Vite React app.
+```bash
+npm run dev
+```
 
-- Static hosts such as GitHub Pages can serve the portfolio and cached Devpost/GitHub fallback experience.
-- Serverless hosts such as Vercel can also run `api/devpost-hackathons.js` for click-time Devpost refresh.
-- Resume PDF is served from `public/resume/Lakshmi_Swathi_Kantheti.pdf`.
+Lint:
 
-## Phase Roadmap
+```bash
+npm run lint
+```
 
-- Phase 1: Personalized portfolio shell, recruiter profile, 3D trading hero, GitHub holdings, Devpost hackathons, resume/skills/journey sections.
-- Phase 2: Make each role profile feel meaningfully different instead of reusing the same section order.
-- Phase 3: Expand AI Studio with AI agents, governance, automations, enrichments, legal-tech flows, and music-generation apps.
-- Phase 4: Add richer motion, sound design, project category metadata, and deploy polish.
+Build:
+
+```bash
+npm run build
+```
+
+Preview the production build:
+
+```bash
+npm run preview
+```
+
+## Deployment
+
+This is a Vite React app and can be deployed to Vercel or any static hosting provider. Vercel is recommended if the Devpost serverless refresh route should be available.
+
+The resume PDF is served from:
+
+```txt
+public/resume/Lakshmi_Swathi_Kantheti.pdf
+```
